@@ -37,8 +37,19 @@ function displayTemperature(response) {
   );
 }
 
-let apiKey = "2861ea5df6b9b5ec04d78330165cba84";
-let city = "Los angeles";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "2861ea5df6b9b5ec04d78330165cba84";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let citySearchElement = document.querySelector("#city-search");
+  search(citySearchElement.value);
+}
+
+search("Amsterdam");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
