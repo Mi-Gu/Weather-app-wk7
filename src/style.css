@@ -57,3 +57,15 @@ li::first-letter {
 .weather-temperature .active :hover {
   text-decoration: none;
 }
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+}
+.weather-forecast-weekday {
+  color: #455a8f;
+  font-size: 14px;
+}
+.weather-forecast-temperatures {
+  color: #455a8f;
+  font-size: 12px;
+}
